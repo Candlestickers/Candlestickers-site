@@ -5,10 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candlestickers!</title>
-  <link rel="stylesheet" crossorigin href="/assets/index-An2Gx7c2.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-CmqDRfaJ.css">
 </head>
 
-<body style="background-color: #ff8000;">
+    <canvas id="stars"></canvas>
+    <script>
+        // creating random stars on the canvas element
+        const canvas = document.getElementById('stars')
+        const ctx = canvas.getContext('2d')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        for (let i = 0; i < 200; i++) {
+            const x = Math.random() * canvas.width
+            const y = Math.random() * canvas.height
+            const r = Math.random() * 1.2
+            ctx.beginPath()
+            ctx.arc(x, y, r, 0, Math.PI * 2)
+            ctx.fillStyle = 'white'
+            ctx.fill()
+        }
+    </script>
+
+
+<body style="background-color: #000000;">
 
 
     <div><ul style="list-style: none; display: flex; margin-left: -15px">
@@ -25,10 +44,10 @@
     </div>
 
     <h1 class="basic_text">
-        For games, animations, and everything in between!
+        In a void of stars, Candlestick is enough!
     </h1>
 
-    <a href="https://candlestickers.app" target="_blank" style="text-decoration: none;">
+    <a href="https://candlestickers.app" target="_blank" style="text-decoration: none; margin: auto; display: flex;" >
         <button class="launch_button">
             Launch Web Editor!
         </button>
