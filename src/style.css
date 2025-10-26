@@ -95,6 +95,7 @@ ul li{
   cursor: pointer;
   color: white;
   animation: transform 1s ease;
+  text-shadow: #000000 0px -1px 10px ;
 }
 
 li:hover{

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candlestickers!</title>
-  <link rel="stylesheet" crossorigin href="/assets/index-CmqDRfaJ.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-Ds0W9DmN.css">
 </head>
 
     <canvas id="stars"></canvas>
@@ -31,8 +31,8 @@
 
 
     <div><ul style="list-style: none; display: flex; margin-left: -15px">
-        <li>Discord</li>
-        <li>Supporters</li>
+        <li><a href="https://discord.gg/5esxxWxd7Z" target="_blank">Discord</a></li>
+        <li>Support</li>
         <li style="font-size: 25px;">Candlestick!</li>
         <li>Learn</li>
         <li>About</li>
@@ -40,10 +40,10 @@
 
 
     <div id="banner" >
-        <img src="/cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
+        <img src="/assets/cs_banner-EGcKR88p.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
     </div>
 
-    <h1 class="basic_text">
+    <h1 class="typewriter">
         In a void of stars, Candlestick is enough!
     </h1>
 
@@ -52,6 +52,69 @@
             Launch Web Editor!
         </button>
     </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- DEMO TILES -->
+
+    <!-- <iframe frameborder="0" src="https://itch.io/embed-upload/10607562?color=000000" allowfullscreen="" width="864" height="528"><a href="https://lidemaster.itch.io/flag-raise">Play Flag Raise on itch.io</a></iframe> -->
+    <script>
+        function showIframe(link) {
+            // alert("OPENING IFRAME")
+        const container = document.getElementById('iframe-container');
+        container.innerHTML = `
+            <iframe
+            frameborder="0"
+            src="${link}"
+            allowfullscreen
+            width="720"
+            height="440">
+            </iframe>
+        `
+        container.scrollIntoView({ behavior: 'smooth', block: "center"})
+        }
+    </script>
+
+<div id="iframe-container">
+    <iframe frameborder="0" src="public/display.mp4" width="720" height="440"></iframe>
+</div>
+<p>Check out games created with Candlestick!</p>
+
+     <div class="square-grid">
+  <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
+    <img src="/assets/flagRaise-Nx4ur2yB.png" alt="Click to play Flag Raise">
+  </div>
+
+  <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
+    <img src="/assets/newtonsApple-D1XJOgTk.png" alt="Click to play Newton's Apple">
+  </div>
+
+  <div class="square">
+    <img src="vite.svg" alt="Game 3">
+  </div>
+  
+  <div class="square">
+    <img src="vite.svg" alt="Game 3">
+  </div>
+
+  <div class="square">
+    <img src="vite.svg" alt="Game 3">
+  </div>
+
+  <div class="square">
+    <img src="vite.svg" alt="Game 3">
+  </div>
+</div>
     
 </body>
 
