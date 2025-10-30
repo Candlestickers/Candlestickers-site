@@ -7,7 +7,14 @@
     <title>Candlestickers!</title>
     <link rel="stylesheet" href="src/style.css">
     <script type="module" src="src/main.js"></script>
-    <link rel="icon" type="png" href="public/icon.png">
+    <link rel="icon" type="png" href="icon.png">
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
 </head>
 
 <canvas id="stars"></canvas>
@@ -28,26 +35,12 @@
 
 
     <div id="banner">
-        <img src="public/cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
+        <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
     </div>
 
     <h1 class="typewriter">
-        In a void of stars, Candlestick is enough!
+        <i class="typewriter">Presents to you...</i>
     </h1>
-
-    <a href="https://candlestickers.app" target="_blank" style="text-decoration: none; margin: auto; display: flex;">
-        <button class="launch_button">
-            Launch Web Editor!
-        </button>
-    </a>
-
-
-
-
-
-
-
-
 
 
 
@@ -56,21 +49,29 @@
     <!-- DEMO TILES -->
 
 
+    <!-- iframe displays video at first, later transforms into any opened game tile thing -->
     <div id="iframe-container">
-        <iframe frameborder="0" src="public/display.mp4" width="720" height="440"></iframe>
+        <iframe frameborder="0" src="display.mp4" width="720" height="395"></iframe>
     </div>
+
+    <!--
+
+
     <p>Check out games created with Candlestick!</p>
 
     <div class="square-grid">
         <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
-            <img src="public/showcase/flagRaise.png" alt="Click to play Flag Raise">
+            <img src="showcase/flagRaise.png" alt="Click to play Flag Raise">
         </div>
 
         <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
-            <img src="public/showcase/newtonsApple.png" alt="Click to play Newton's Apple">
+            <img src="showcase/newtonsApple.png" alt="Click to play Newton's Apple">
         </div>
 
-        <div class="square">
+        
+
+
+        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/13816007?color=000000`)">
             <img src="vite.svg" alt="Game 3">
         </div>
 
@@ -84,7 +85,44 @@
 
         <div class="square">
             <img src="vite.svg" alt="Game 3">
+        </div> -->
+
+
+
+
+        <div style="margin: auto; display: block; flex-wrap: wrap; gap: 10px; width: 75%; margin-top: 20px; margin-bottom: 800px;">
+    
+            
+
+            <h1>Introducting <i>Candlestick!</i></h1>
+        <h2>Animation and Game Development a click away!</h2>
+
+            <button class="launch_button" onclick="window.open('https://candlestickers.app','_blank')">
+                Launch Web Editor!
+            </button>
+
+            
+
+
         </div>
+
+
+
+        
+
+
+
+
+    </div>
+
+
+    <img src="ground.png" style="display: flex; width: 100%;">
+
+
+    <div style="background-color: black;">
+        <ul style="display: flex; gap: 0px;">
+            <li onclick="window.open('mailto:support@candlestickers.app','_blank')" style="padding-bottom: 10px; font-size: 20px;"> <img src="envelope.png" width="30px" height="30px" style="margin-right: 10px;"> team@candlestickers.app</li>
+        </ul>
     </div>
 
 </body>

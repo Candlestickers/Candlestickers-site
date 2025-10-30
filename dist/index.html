@@ -5,61 +5,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candlestickers!</title>
-  <link rel="stylesheet" crossorigin href="/assets/index-Ds0W9DmN.css">
+    <link rel="icon" type="png" href="icon.png">
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/index-C82ZjZ6p.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Ber1yDtd.css">
 </head>
 
-    <canvas id="stars"></canvas>
-    <script>
-        // creating random stars on the canvas element
-        const canvas = document.getElementById('stars')
-        const ctx = canvas.getContext('2d')
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
-        for (let i = 0; i < 200; i++) {
-            const x = Math.random() * canvas.width
-            const y = Math.random() * canvas.height
-            const r = Math.random() * 1.2
-            ctx.beginPath()
-            ctx.arc(x, y, r, 0, Math.PI * 2)
-            ctx.fillStyle = 'white'
-            ctx.fill()
-        }
-    </script>
+<canvas id="stars"></canvas>
 
 
 <body style="background-color: #000000;">
 
 
-    <div><ul style="list-style: none; display: flex; margin-left: -15px">
-        <li><a href="https://discord.gg/5esxxWxd7Z" target="_blank">Discord</a></li>
-        <li>Support</li>
-        <li style="font-size: 25px;">Candlestick!</li>
-        <li>Learn</li>
-        <li>About</li>
-    </ul></div>
+    <div>
+        <ul style="list-style: none; display: flex; margin-left: -15px">
+            <li><a href="https://discord.gg/5esxxWxd7Z" target="_blank">Discord</a></li>
+            <li>Support</li>
+            <li style="font-size: 25px;">Candlestick!</li>
+            <li>Learn</li>
+            <li>About</li>
+        </ul>
+    </div>
 
 
-    <div id="banner" >
-        <img src="/assets/cs_banner-EGcKR88p.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
+    <div id="banner">
+        <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
     </div>
 
     <h1 class="typewriter">
-        In a void of stars, Candlestick is enough!
+        <i class="typewriter">Presents to you...</i>
     </h1>
-
-    <a href="https://candlestickers.app" target="_blank" style="text-decoration: none; margin: auto; display: flex;" >
-        <button class="launch_button">
-            Launch Web Editor!
-        </button>
-    </a>
-
-
-
-
-
-
-
-
 
 
 
@@ -67,55 +48,83 @@
 
     <!-- DEMO TILES -->
 
-    <!-- <iframe frameborder="0" src="https://itch.io/embed-upload/10607562?color=000000" allowfullscreen="" width="864" height="528"><a href="https://lidemaster.itch.io/flag-raise">Play Flag Raise on itch.io</a></iframe> -->
-    <script>
-        function showIframe(link) {
-            // alert("OPENING IFRAME")
-        const container = document.getElementById('iframe-container');
-        container.innerHTML = `
-            <iframe
-            frameborder="0"
-            src="${link}"
-            allowfullscreen
-            width="720"
-            height="440">
-            </iframe>
-        `
-        container.scrollIntoView({ behavior: 'smooth', block: "center"})
-        }
-    </script>
 
-<div id="iframe-container">
-    <iframe frameborder="0" src="public/display.mp4" width="720" height="440"></iframe>
-</div>
-<p>Check out games created with Candlestick!</p>
+    <!-- iframe displays video at first, later transforms into any opened game tile thing -->
+    <div id="iframe-container">
+        <iframe frameborder="0" src="display.mp4" width="720" height="395"></iframe>
+    </div>
 
-     <div class="square-grid">
-  <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
-    <img src="/assets/flagRaise-Nx4ur2yB.png" alt="Click to play Flag Raise">
-  </div>
+    <!--
 
-  <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
-    <img src="/assets/newtonsApple-D1XJOgTk.png" alt="Click to play Newton's Apple">
-  </div>
 
-  <div class="square">
-    <img src="vite.svg" alt="Game 3">
-  </div>
-  
-  <div class="square">
-    <img src="vite.svg" alt="Game 3">
-  </div>
+    <p>Check out games created with Candlestick!</p>
 
-  <div class="square">
-    <img src="vite.svg" alt="Game 3">
-  </div>
+    <div class="square-grid">
+        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
+            <img src="showcase/flagRaise.png" alt="Click to play Flag Raise">
+        </div>
 
-  <div class="square">
-    <img src="vite.svg" alt="Game 3">
-  </div>
-</div>
+        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
+            <img src="showcase/newtonsApple.png" alt="Click to play Newton's Apple">
+        </div>
+
+        
+
+
+        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/13816007?color=000000`)">
+            <img src="vite.svg" alt="Game 3">
+        </div>
+
+        <div class="square">
+            <img src="vite.svg" alt="Game 3">
+        </div>
+
+        <div class="square">
+            <img src="vite.svg" alt="Game 3">
+        </div>
+
+        <div class="square">
+            <img src="vite.svg" alt="Game 3">
+        </div> -->
+
+
+
+
+        <div style="margin: auto; display: block; flex-wrap: wrap; gap: 10px; width: 75%; margin-top: 20px; margin-bottom: 800px;">
     
+            
+
+            <h1>Introducting <i>Candlestick!</i></h1>
+        <h2>Animation and Game Development a click away!</h2>
+
+            <button class="launch_button" onclick="window.open('https://candlestickers.app','_blank')">
+                Launch Web Editor!
+            </button>
+
+            
+
+
+        </div>
+
+
+
+        
+
+
+
+
+    </div>
+
+
+    <img src="ground.png" style="display: flex; width: 100%;">
+
+
+    <div style="background-color: black;">
+        <ul style="display: flex; gap: 0px;">
+            <li onclick="window.open('mailto:support@candlestickers.app','_blank')" style="padding-bottom: 10px; font-size: 20px;"> <img src="envelope.png" width="30px" height="30px" style="margin-right: 10px;"> team@candlestickers.app</li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
