@@ -10,6 +10,12 @@ const STAR_MIN = 1;
 const STAR_MAX = 3;
 const STAR_GROW = 3;
 
+var meteorLen = 0;
+const METEOR_LEN_MAX = 150;
+const METEOR_EASE_IN = 0.02;
+const METEOR_EASE_OUT = 0.05;
+const METEOR_SCROLL_BUFFER = 300; // this many pixels away from the bottom of the screen = show meteors
+
 let mouse = { x: 0, y: 0 }; // mouse position (see mousemove listener)
 var distToMouse = (x, y) => Math.sqrt((x - mouse.x) ** 2 + (y - mouse.y) ** 2);
 
@@ -23,7 +29,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let stars = [];
-for (let i = 0; i < 250; i++) {
+for (let i = 0; i < 100; i++) {
     stars.push({
         x: Math.random(),
         y: Math.random(),
@@ -32,13 +38,12 @@ for (let i = 0; i < 250; i++) {
     });
 }
 let meteors = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 10; i++) {
     meteors.push({
         x: Math.random(),
         y: Math.random(),
         radius: Math.random() * (STAR_MAX-STAR_MIN) + STAR_MIN,
-        parallax: Math.random() * PARALLAX_MAX,
-        length: 0
+        parallax: 0.1 + Math.random() * (PARALLAX_MAX-0.1)
     });
 }
 
@@ -63,19 +68,18 @@ function drawBackground() {
 
     // STARS
     stars.map((value) => {
-        ctx.beginPath();
-
         let canvasX = value.x * canvas.width;
-        // add parallax and wrap stars to top and bottom
         let canvasY = value.y * canvas.height - window.scrollY * value.parallax;
         while(canvasY < -(value.radius + STAR_GROW)/2) canvasY += canvas.height + value.radius + STAR_GROW; // wrap: ensure star is fully off screen (and also mod doesn't work with negative numbers?)
 
-        let xy = [canvasX, canvasY];
+        // let xy = [canvasX, canvasY];
 
         // draw
+        ctx.beginPath();
+
         ctx.arc(
-            xy[0],
-            xy[1],
+            canvasX,
+            canvasY,
             // magic math for stars growing if the mouse is close
             value.radius + STAR_GROW/(distToMouse(canvasX, canvasY)**2/100 + 1),
             0, Math.PI * 2
@@ -88,28 +92,24 @@ function drawBackground() {
     });
 
     // METEORS
+    // meteor gets longer if user scrolled down far enough
+    if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight - METEOR_SCROLL_BUFFER) {
+        meteorLen = METEOR_LEN_MAX*METEOR_EASE_IN + meteorLen*(1-METEOR_EASE_IN);
+    } else {
+        meteorLen = meteorLen*(1-METEOR_EASE_OUT);
+    }
     meteors.forEach((value) => {
-
-        const maxL = 200;
-        if (scrollRatio > 0.75) {
-            value.length += (maxL - value.length) / 52;
-        } else {
-            value.length = Math.max(value.radius, value.length - 4 || Math.max(1, value.radius * 5));
-        }
+        let canvasX = value.x * (canvas.width + METEOR_LEN_MAX);
+        let canvasY = window.innerHeight - (value.y*500+300) + (document.documentElement.scrollHeight - window.scrollY - canvas.height)*value.parallax;
 
         ctx.beginPath();
+
         ctx.strokeStyle = 'white';
+        ctx.lineCap = "round";
+        ctx.lineWidth = value.radius;
 
-        let pos = {
-            x: value.x * canvas.width * 1.4,
-            y: document.documentElement.scrollHeight - value.y * canvas.height / 1.4 - (scrollY + 200),
-            r: Math.min(100, value.radius * 5 * 1 / (1 / Math.max(scrollRatio, 1e5) - 1))
-        }
-
-        // ctx.stroke = 10;
-        ctx.lineWidth = 1 + value.radius;
-        ctx.moveTo(pos.x + maxL / 3, pos.y - maxL / 3);
-        ctx.lineTo(pos.x + maxL / 3 - value.length * 2, pos.y - maxL / 3 + value.length * 0.5);
+        ctx.moveTo(canvasX, canvasY);
+        ctx.lineTo(canvasX - meteorLen, canvasY + meteorLen/2);
 
         ctx.stroke();
 
