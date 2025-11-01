@@ -100,7 +100,7 @@ function drawBackground() {
     }
     meteors.forEach((value) => {
         let canvasX = value.x * (canvas.width + METEOR_LEN_MAX);
-        let canvasY = window.innerHeight - (value.y*500+300) + (document.documentElement.scrollHeight - window.scrollY - canvas.height)*value.parallax;
+        let canvasY = window.innerHeight - (value.y*canvas.height) + (document.documentElement.scrollHeight - window.scrollY - canvas.height)*value.parallax;
 
         ctx.beginPath();
 
