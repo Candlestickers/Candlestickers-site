@@ -83,8 +83,8 @@ function drawBackground() {
         ctx.fillStyle = 'white';
         ctx.fill();
 
-        if (distToMouse(...xy) <= 200)
-            constellation.push([...xy, 1 / distToMouse(...xy)]);
+//         if (distToMouse(...xy) <= 200)
+//             constellation.push([...xy, 1 / distToMouse(...xy)]);
     });
 
     // METEORS

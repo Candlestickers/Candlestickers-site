@@ -33,10 +33,6 @@ p {
     z-index: -2;
 }
 
-/* .launchButton{
-  margin: auto
-} */
-
 .typewriter {
     font-family: 'Courier New', monospace;
     color: white;
@@ -72,8 +68,8 @@ p {
     background-color: #000000;
     font-size: 25px;
     color: #ffffff;
-    margin: auto;
-    display: flex;
+/*     margin: auto;
+    display: flex; */
     cursor: pointer;
     border-radius: 25px;
     border-color: white;
@@ -89,6 +85,19 @@ p {
     box-shadow: 0 0 20px white;
     transition: transform 0.3s ease, box-shadow 0.5s ease-out, background-color 0.3s ease, color 0.3s ease;
     /* #FF8000 */
+}
+
+.download_button {
+    font-size: 35px;
+    cursor: pointer;
+    transform: scale(1);
+    /* shadow */
+    transition: transform 0.3s ease, text-shadow 1s ease;
+}
+
+.download_button:hover {
+    transform: scale(1.5);
+    text-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 ul li {
