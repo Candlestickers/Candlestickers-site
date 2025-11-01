@@ -60,8 +60,9 @@ function drawStars() {
         ctx.fillStyle = 'white';
         ctx.fill();
 
-        if(distToMouse(...xy)<=200)
-          constellation.push([...xy,1/distToMouse(...xy)]);
+        // constellation pattern disabled for now
+        // if(distToMouse(...xy)<=150)
+          // constellation.push([...xy,(1.5/distToMouse(...xy))]);
     });
 
     meteors.forEach((value)=>{
