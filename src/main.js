@@ -1,7 +1,12 @@
 import './style.css';
 
-let mouse = { x: 0, y: 0 }; // mouse position (see mousemove listener)
+// <1 = normal parallax, 1 = no parallax, >1 = scroll faster than webpage
+const BG_PARALLAX = 2;
 
+const BG_TOP = '#0e012cff'
+const BG_BOTTOM = '#4a0a8eff'
+
+let mouse = { x: 0, y: 0 }; // mouse position (see mousemove listener)
 
 /////////////////////////////
 // BACKGROUND STARS CANVAS //
@@ -30,21 +35,25 @@ for (let i = 0; i < 20; i++) {
     });
 }
 
-function drawStars() {
+function drawBackground() {
+    var scrollRatio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    var distToMouse = (x, y) => Math.sqrt((x - mouse.x) ** 2 + (y - mouse.y) ** 2);
+
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas 
     var constellation = [];
+    
 
     // adding background gradient
-    var scrollRatio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(Math.max(0, Math.min(1, 0.7 - (scrollRatio / 1.5))), '#00002cff');  // top color
-    gradient.addColorStop(1, '#2c006dff');  // bottom color
+    // determine pan amount based on scrolled amount
+    let gradientPan = scrollRatio * BG_PARALLAX;
+    // gradient is taller than window height to allow panning gradient up when scrolling
+    const gradient = ctx.createLinearGradient(0, -(canvas.height * gradientPan), 0, canvas.height * (1 + BG_PARALLAX - gradientPan));
+    // add stops and fill
+    gradient.addColorStop(0, BG_TOP); // top color
+    gradient.addColorStop(1, BG_BOTTOM); // bottom color
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
-    var distToMouse = (x, y) => Math.sqrt((x - mouse.x) ** 2 + (y - mouse.y) ** 2);
 
     // draw stars
     stars.map((value) => {
@@ -113,9 +122,6 @@ function drawStars() {
     });
 }
 
-drawStars();
-
-
 // === IFRAME HANDLER ===
 function showIframe(link) {
     const container = document.getElementById('iframe-container');
@@ -150,7 +156,7 @@ window.addEventListener('mousemove', (event) => {
 })
 
 function animate() {
-    drawStars();
+    drawBackground();
     requestAnimationFrame(animate);
 }
 animate();
