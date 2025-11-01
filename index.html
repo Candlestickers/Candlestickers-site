@@ -9,124 +9,95 @@
     <script type="module" src="src/main.js"></script>
     <link rel="icon" type="png" href="icon.png">
 
-
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
 </head>
 
-<canvas id="stars"></canvas>
+<body style="background-color: #000000">
+    <canvas id="stars"></canvas>
+
+    <header>
+        <nav>
+            <ul>
+                <li>Community</li>
+                <li>Support</li>
+                <li id="homeButton">Candlestickers</li>
+                <li>GitHub</li>
+                <li>About</li>
+            </ul>
+        </nav>
 
 
-<body style="background-color: #000000;">
-
-
-    <div>
-        <ul style="list-style: none; display: flex; margin-left: -15px">
-            <li><a href="https://discord.gg/5esxxWxd7Z" target="_blank">Discord</a></li>
-            <li>Support</li>
-            <li style="font-size: 25px;">Candlestick!</li>
-            <li>Learn</li>
-            <li>About</li>
-        </ul>
-    </div>
-
-
-    <div id="banner">
-        <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
-    </div>
-
-    <h1 class="typewriter">
-        <i class="typewriter">Presents to you...</i>
-    </h1>
-
-
-
-
-
-    <!-- DEMO TILES -->
-
-
-    <!-- iframe displays video at first, later transforms into any opened game tile thing -->
-    <div id="iframe-container">
-        <iframe frameborder="0" src="display.mp4" width="720" height="395"></iframe>
-    </div>
-
-    <!--
-
-
-    <p>Check out games created with Candlestick!</p>
-
-    <div class="square-grid">
-        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
-            <img src="showcase/flagRaise.png" alt="Click to play Flag Raise">
+        <div id="banner">
+            <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
         </div>
-
-        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
-            <img src="showcase/newtonsApple.png" alt="Click to play Newton's Apple">
-        </div>
-
         
+        <h1>Candlestickers</h1>
+        <h2>Multimedia for free, for everyone, forever.</h2>
+        <!-- <h2 class="typewriter">
+            <i class="typewriter">Multimedia for free, for everyone, forever.</i>
+        </h2> -->
+    </header>
 
-
-        <div class="square" onclick="showIframe(`https://itch.io/embed-upload/13816007?color=000000`)">
-            <img src="vite.svg" alt="Game 3">
+    <main>
+        <!-- DEMO TILES -->
+        <!-- iframe displays video at first, later transforms into any opened game tile thing -->
+        <div id="iframe-container">
+            <iframe frameborder="0" src="display.mp4" width="720" height="395"></iframe>
         </div>
 
-        <div class="square">
-            <img src="vite.svg" alt="Game 3">
-        </div>
+        <!--
+        <p>Check out games created with Candlestick!</p>
 
-        <div class="square">
-            <img src="vite.svg" alt="Game 3">
-        </div>
+        <div class="square-grid">
+            <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
+                <img src="showcase/flagRaise.png" alt="Click to play Flag Raise">
+            </div>
 
-        <div class="square">
-            <img src="vite.svg" alt="Game 3">
-        </div> -->
+            <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10859424?color=000000`)">
+                <img src="showcase/newtonsApple.png" alt="Click to play Newton's Apple">
+            </div>
 
+            <div class="square" onclick="showIframe(`https://itch.io/embed-upload/13816007?color=000000`)">
+                <img src="vite.svg" alt="Game 3">
+            </div>
 
+            <div class="square">
+                <img src="vite.svg" alt="Game 3">
+            </div>
 
+            <div class="square">
+                <img src="vite.svg" alt="Game 3">
+            </div>
+
+            <div class="square">
+                <img src="vite.svg" alt="Game 3">
+            </div>
+            -->
 
         <div style="margin: auto; display: flex; gap: 20px; width: 75%; margin-top: 20px; margin-bottom: 800px; flex-direction: row; align-items: center; justify-content: center;">
-    
-            
+            <img src="public/logo-apple.png" class="download_button" width="25px" style="margin-top: -5px;">
+            <img src="public/logo-windows.png" class="download_button" width="35px">
 
-            <!-- <h1>Introducting <i>Candlestick!</i></h1> -->
-        <!-- <h2>Animation and Game Development a click away!</h2> -->
-
-        <img src="public/logo-apple.png" class="download_button" width="25px" style="margin-top: -5px;" >
-        <img src="public/logo-windows.png" class="download_button" width="35px" >
-
-            <button class="launch_button" onclick="window.open('https://candlestickers.app','_blank')">
+            <button class="launch_button" onclick="window.open('https:\/\/candlestickers.app', '_blank')">
                 Launch Web Editor!
             </button>
-            
-
-
         </div>
 
+        <!-- </div> -->
+    </main>
+</body>
 
-
-        
-
-
-
-
-    </div>
-
-
+<footer>
     <img src="ground.png" style="display: flex; width: 100%;">
-
 
     <div style="background-color: black;">
         <ul style="display: flex; gap: 0px;">
             <li onclick="window.open('mailto:support@candlestickers.app','_blank')" style="padding-bottom: 10px; font-size: 20px;"> <img src="envelope.png" width="30px" height="30px" style="margin-right: 10px;"> team@candlestickers.app</li>
         </ul>
     </div>
-
-</body>
+</footer>
 
 </html>
