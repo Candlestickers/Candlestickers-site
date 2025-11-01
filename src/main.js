@@ -48,7 +48,7 @@ function drawBackground() {
 
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas 
-    var constellation = [];
+    // var constellation = [];
     
     // adding background gradient
     // determine pan amount based on scrolled amount
@@ -114,15 +114,15 @@ function drawBackground() {
         ctx.stroke();
 
 
-        if (constellation.length) {
-            for (var i = 1; i < constellation.length; i++) {
-                ctx.beginPath();
-                ctx.moveTo(...constellation[i - 1]);
-                ctx.lineWidth = constellation[i][2];
-                ctx.lineTo(...constellation[i]);
-                ctx.stroke();
-            }
-        }
+        // if (constellation.length) {
+        //     for (var i = 1; i < constellation.length; i++) {
+        //         ctx.beginPath();
+        //         ctx.moveTo(...constellation[i - 1]);
+        //         ctx.lineWidth = constellation[i][2];
+        //         ctx.lineTo(...constellation[i]);
+        //         ctx.stroke();
+        //     }
+        // }
 
 
         // ctx.arc(
