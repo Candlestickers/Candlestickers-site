@@ -6,11 +6,11 @@ let mouse = { x: 0, y: 0 }; // mouse position (see mousemove listener)
 /////////////////////////////
 // BACKGROUND STARS CANVAS //
 /////////////////////////////
-const canvas = document.getElementById('stars')
-const ctx = canvas.getContext('2d')
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 let stars = [];
 for (let i = 0; i < 250; i++) {
@@ -18,7 +18,7 @@ for (let i = 0; i < 250; i++) {
         x: Math.random(),
         y: Math.random(),
         r: Math.random() * 1.2
-    })
+    });
 }
 let meteors = [];
 for (let i = 0; i < 20; i++) {
@@ -27,21 +27,21 @@ for (let i = 0; i < 20; i++) {
         y: Math.random(),
         r: Math.random(),
         length: 0
-    })
+    });
 }
 
 function drawStars() {
     // clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height) // clear canvas 
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas 
     var constellation = [];
 
     // adding background gradient
     var scrollRatio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height)
-    gradient.addColorStop(Math.max(0, Math.min(1, 0.7 - (scrollRatio / 1.5))), '#00002cff')  // top color
-    gradient.addColorStop(1, '#2c006dff')  // bottom color
-    ctx.fillStyle = gradient
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(Math.max(0, Math.min(1, 0.7 - (scrollRatio / 1.5))), '#00002cff');  // top color
+    gradient.addColorStop(1, '#2c006dff');  // bottom color
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
     var distToMouse = (x, y) => Math.sqrt((x - mouse.x) ** 2 + (y - mouse.y) ** 2);
@@ -56,7 +56,8 @@ function drawStars() {
             xy[1],
             // buncha numbers for simple resize when mouse is near star
             value.r + Math.min(5, Math.max(1, 70 / Math.sqrt((value.x * canvas.width - mouse.x) ** 2 + ((newHeight > canvas.height ? newHeight - canvas.height : newHeight) - mouse.y) ** 2))),
-            0, Math.PI * 2);
+            0, Math.PI * 2
+        );
         ctx.fillStyle = 'white';
         ctx.fill();
 
@@ -91,9 +92,6 @@ function drawStars() {
 
 
         if (constellation.length) {
-
-
-
             for (var i = 1; i < constellation.length; i++) {
                 ctx.beginPath();
                 ctx.moveTo(...constellation[i - 1]);
@@ -101,7 +99,6 @@ function drawStars() {
                 ctx.lineTo(...constellation[i]);
                 ctx.stroke();
             }
-
         }
 
 
@@ -116,26 +113,25 @@ function drawStars() {
     });
 }
 
-drawStars()
+drawStars();
 
 
 // === IFRAME HANDLER ===
 function showIframe(link) {
-    const container = document.getElementById('iframe-container')
+    const container = document.getElementById('iframe-container');
     container.innerHTML = `
-    <iframe
-      frameborder="0"
-      src="${link}"
-      allowfullscreen
-      width="720"
-      height="440">
-    </iframe>
-  `
-    container.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        <iframe
+            frameborder="0"
+            src="${link}"
+            allowfullscreen
+            width="720"
+            height="440">
+        </iframe>`;
+    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // Make showIframe accessible from HTML
-window.showIframe = showIframe
+window.showIframe = showIframe;
 
 
 ////////////////////////////
@@ -148,9 +144,9 @@ window.addEventListener('resize', () => {
 // window.addEventListener('scroll', drawStars)
 // update mouse position
 window.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect()
-    mouse.x = event.clientX - rect.left
-    mouse.y = event.clientY - rect.top
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.clientX - rect.left;
+    mouse.y = event.clientY - rect.top;
 })
 
 function animate() {
