@@ -139,6 +139,7 @@ function drawBackground() {
 // === IFRAME HANDLER ===
 function showIframe(link) {
     const container = document.getElementById('iframe-container');
+    container.style.display = 'flex';
     container.innerHTML = `
         <iframe
             frameborder="0"

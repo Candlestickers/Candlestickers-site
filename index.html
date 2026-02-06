@@ -24,23 +24,43 @@
 
 
     <div>
-        <ul style="list-style: none; display: flex; margin-left: -15px">
+        <ul class="top-nav">
+            <!--<li><a href="support.html">Support</a></li>-->
+            <!--<li style="font-size: 25px;">Candlestick!</li>-->
+            <li><a href="https://www.wickeditor.com/#/learn/">Learn</a></li>
+            <li><a href="https://candlestickers.app">Create</a></li>
             <li><a href="https://discord.gg/5esxxWxd7Z" target="_blank">Discord</a></li>
-            <li>Support</li>
-            <li style="font-size: 25px;">Candlestick!</li>
-            <li>Learn</li>
-            <li>About</li>
         </ul>
     </div>
 
 
     <div id="banner">
-        <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
+        <img src="cs_banner.png" width="900px">
+    </div>
+    
+    <div class="launch-and-download-buttons-container">
+        <div class="download-buttons-container">
+            <img src="public/logo-apple.png" class="download_button" width="25px" style="margin-top: -5px;" >
+            <img src="public/logo-windows.png" class="download_button" width="35px" >
+            <img src="public/logo-linux.png" class="download_button" width="35px" >
+        </div>
+
+        <button class="launch_button" onclick="window.open('https://candlestickers.app','_blank')">
+            Launch Web Editor!
+        </button>
     </div>
 
+    <div class="promo-container">
+        <p>Candlestick is a free, open-source tool for creating games, animations, and everything in-between!</p>
+        <p>Candlestick is a fork of <a href="https://www.wickeditor.com">Wick Editor</a> that aims to bring much needed updates and new features etc. etc. </a></p>
+        <iframe id="promo-video" frameborder="0" src="display.mp4" width="720" height="395"></iframe>
+    </div>
+
+    <!--
     <h1 class="typewriter">
         <i class="typewriter">Presents to you...</i>
     </h1>
+-->
 
 
 
@@ -49,15 +69,13 @@
     <!-- DEMO TILES -->
 
 
-    <!-- iframe displays video at first, later transforms into any opened game tile thing -->
-    <div id="iframe-container">
-        <iframe frameborder="0" src="display.mp4" width="720" height="395"></iframe>
+
+
+
+    <p class="projects-examples-header">Check out these projects created with Candlestick!</p>
+    
+    <div id="iframe-container" style="display: none;">
     </div>
-
-    <!--
-
-
-    <p>Check out games created with Candlestick!</p>
 
     <div class="square-grid">
         <div class="square" onclick="showIframe(`https://itch.io/embed-upload/10607562?color=000000`)">
@@ -85,7 +103,7 @@
 
         <div class="square">
             <img src="vite.svg" alt="Game 3">
-        </div> -->
+        </div>
 
 
 
@@ -97,12 +115,6 @@
 <!--         <h1>Introducting <i>Candlestick!</i></h1>
         <h2>Animation and Game Development a click away!</h2> -->
   
-        <img src="public/logo-apple.png" class="download_button" width="25px" style="margin-top: -5px;" >
-        <img src="public/logo-windows.png" class="download_button" width="35px" >
-
-        <button class="launch_button" onclick="window.open('https://candlestickers.app','_blank')">
-            Launch Web Editor!
-        </button>
 
 
 
