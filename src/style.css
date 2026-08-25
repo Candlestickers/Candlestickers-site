@@ -26,8 +26,9 @@ nav ul li {
 }
 
 #banner {
-  /* background-color: rgb(0, 0, 0); */
-  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
   z-index: -2;
 }
 
@@ -207,7 +208,22 @@ iframe {
   z-index: -1;
 }
 
+footer img {
+  display: flex;
+  width: 100%;
+}
+
 #email-footer {
+  background-color: black;
   display: flex;
   gap: 0px;
+}
+
+#email-footer-button {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+#email-footer-button img {
+  margin-right: 10px;
 }

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color: #000000">
+<body>
     <canvas id="stars"></canvas>
 
     <header>
@@ -29,10 +29,7 @@
             </ul>
         </nav>
 
-
-        <div id="banner">
-            <img src="cs_banner.png" width="900px" style="margin: auto; display: flex; margin-top: -50px;">
-        </div>
+        <img src="cs_banner.png" id="banner">
         
         <h1>Candlestickers</h1>
         <h2>Bright ideas in a flash.</h2>
@@ -89,11 +86,11 @@
 </body>
 
 <footer>
-    <img src="ground.png" style="display: flex; width: 100%;">
+    <img src="ground.png">
 
-    <div style="background-color: black;">
+    <div>
         <ul id="email-footer">
-            <li onclick="window.open('mailto:support@candlestickers.app','_blank')" style="padding-bottom: 10px; font-size: 20px;"> <img src="envelope.png" width="30px" height="30px" style="margin-right: 10px;"> team@candlestickers.app</li>
+            <li id="email-footer-button" onclick="window.open('mailto:support@candlestickers.app','_blank')"> <img src="envelope.png" width="30px" height="30px"> team@candlestickers.app</li>
         </ul>
     </div>
 </footer>
