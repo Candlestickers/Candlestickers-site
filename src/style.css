@@ -57,6 +57,7 @@ h3 {
 .project-section {
   position: relative;
   padding: 32px;
+  margin-top: 32px;
   border-width: 16px;
   border-style: solid;
   border-color: #f76b07;
