@@ -6,6 +6,12 @@
   overscroll-behavior: none;
 }
 
+header, main {
+  width: calc(100% - 64px);
+  margin: auto;
+  max-width: 1024px;
+}
+
 /* HEADER + NAVIGATION */
 
 nav ul {
@@ -34,58 +40,34 @@ nav ul li {
 
 h1 {
   text-align: center;
-  font-size: 50;
+  font-size: 40px;
 }
 
 h2 {
   text-align: center;
-  font-size: 40;
+  font-size: 30px;
 }
 
-/* .typewriter {
-  font-family: 'Courier New', monospace;
-  color: white;
-  font-size: 25px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid white;
-  width: 0;
-  animation: typing 7s steps(44, end) forwards, blink 1.2s infinite;
-  display: block;
-  margin: 50px auto;
-  text-align: center;
-  text-shadow: 0 0 20px #000000;
-} */
+h3 {
+  font-size: 24px;
+}
 
-/* BODY */
+/* MAIN */
+
+.project-section {
+  padding: 32px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #f76b07;
+  border-radius: 0 0 64px 0;
+  corner-shape: bevel;
+}
 
 p {
-  margin: 50px auto;
+  font-size: 16px;
+  margin: 1em 0;
   display: block;
-  text-align: center;
 }
-
-/* body {
-  background-color: black;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 40px 40px;
-} */
-
-/*
-@keyframes typing {
-  from { width: 0; }
-  to { width: 44.4%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-*/
-
-/* style="margin: auto; display: flex; margin-top: 50px; cursor: pointer;"  */
-
-/* style="background-color: #FF8000; font-size: 30px; color: white; margin: auto; display: flex; margin-top: 50px; cursor: pointer;" */
 
 #downloads {
   margin: auto;
@@ -93,7 +75,6 @@ p {
   gap: 20px;
   width: 75%;
   margin-top: 20px;
-  margin-bottom: 800px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
