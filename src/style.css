@@ -55,12 +55,25 @@ h3 {
 /* MAIN */
 
 .project-section {
+  position: relative;
   padding: 32px;
-  border-width: 8px;
+  border-width: 16px;
   border-style: solid;
   border-color: #f76b07;
   border-radius: 0 0 64px 0;
   corner-shape: bevel;
+}
+
+.project-section:before {
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border-width: 16px 0 0 16px;
+  border-style: solid;
+  border-color: #a91700;
 }
 
 p {
