@@ -52,29 +52,35 @@ h3 {
   font-size: 24px;
 }
 
+.subtitle {
+  text-align: center;
+}
+
 /* MAIN */
 
-.project-section {
+.section-container {
   position: relative;
   padding: 32px;
   margin-top: 32px;
   border-width: 16px;
   border-style: solid;
-  border-color: #f76b07;
-  border-radius: 0 0 64px 0;
+  border-color: #FF871E;
+  background-color: #320b18;
+  border-radius: 0 0 64px 0; /* bottom right */
   corner-shape: bevel;
 }
 
-.project-section:before {
+.section-container:before {
   content: '';
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  border-width: 16px 0 0 16px;
+  pointer-events: none; /* avoid covering text, so it's highlightable */
+  border-width: 16px 0 0 16px; /* top and left */
   border-style: solid;
-  border-color: #a91700;
+  border-color: #B73E0E;
 }
 
 p {
